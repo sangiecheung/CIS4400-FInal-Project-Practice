@@ -15,4 +15,5 @@ SELECT Sample_Number,
     E_coli_Quanti_Tray___MPN_100mL_ as E_coli,
     longitude, latitude, street_address, city, zipcode
 FROM water
-FULL JOIN sites using (Sample_Site)
+LEFT JOIN sites using (Sample_Site)
+WHERE Sample_Date >= '2019-01-01'

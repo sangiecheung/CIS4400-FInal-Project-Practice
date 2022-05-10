@@ -17,7 +17,8 @@ combined as (
     COALESCE(complaint_locations.longitude, sample_locations.longitude) as longitude
 FROM complaint_locations 
 FULL JOIN sample_locations 
-on complaint_locations.latitude=sample_locations.latitude and complaint_locations.longitude=sample_locations.longitude)
+on complaint_locations.latitude=sample_locations.latitude 
+and complaint_locations.longitude=sample_locations.longitude)
 
 SELECT row_number() OVER () AS location_dim_id, *
 from combined
